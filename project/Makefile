@@ -10,7 +10,7 @@ all:
 	(cd timerLib && make install)
 	make buzzer.elf
 
-buzzer.elf: ${COMMON_OBJECTS} buzzer.o led.o stateMachine.o main.o ./lib/libTimer.a
+buzzer.elf: ${COMMON_OBJECTS} buzzer.o led.o switches.o stateMachine.o main.o ./lib/libTimer.a
 	${CC} ${CFLAGS} -o $@ $^
 
 load: buzzer.elf
